@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Generated CVs and LaTeX output (contienen datos personales + vacantes.csv)
+output/
+
+# Datos personales — CV maestro (nombre, email, teléfono, historial)
+data/profile/
+
+# Variables de entorno locales
+.env
+.env.*
+
+# Test cache
+.pytest_cache/

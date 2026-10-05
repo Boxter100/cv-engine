@@ -1,0 +1,25 @@
+Frontend Developer
+
+Company: Example Company
+
+We are looking for a Frontend Developer to build modern web applications.
+
+Responsibilities:
+- Build reusable user interfaces.
+- Develop responsive web applications.
+- Work with backend developers.
+- Integrate REST APIs.
+- Maintain and improve existing applications.
+
+Requirements:
+- JavaScript or TypeScript.
+- React.
+- Git.
+- REST APIs.
+- HTML and CSS.
+
+Preferred:
+- Astro.
+- Tailwind CSS.
+- PostgreSQL.
+- Experience with modern frontend architectures.

@@ -1,0 +1,62 @@
+En Grupo Sener, somos líderes mundiales en Ingeniería y Tecnología Avanzada, comprometidos con la excelencia, la sostenibilidad y la innovación en cada proyecto que emprendemos. A través de nuestras personas, buscamos transformar el mundo, desafiando los límites de la tecnología.
+
+Estamos buscando Ingenieros/as con gusto por el trabajo en equipo y pasión por los proyectos de Infraestructuras, Transporte y Movilidad.
+
+¡Únete a Sener Mobility!
+
+Responsabilidades clave:
+
+Desarrollar, entrenar y evaluar modelos de Machine Learning para problemas de clasificación, regresión y análisis de datos.
+
+Realizar preprocesamiento, limpieza y análisis exploratorio de datos para asegurar la calidad de la información.
+
+Integrar modelos de Machine Learning y soluciones basadas en LLM en APIs y servicios backend.
+
+Implementar soluciones utilizando embeddings y búsqueda semántica en bases de datos vectoriales.
+
+Desarrollar aplicaciones que integren modelos de lenguaje (como OpenAI, Azure OpenAI u otros).
+
+Implementar arquitecturas RAG (Retrieval-Augmented Generation) y colaborar en el desarrollo de agentes de IA.
+
+Desplegar soluciones utilizando contenedores (Docker) y participar en el monitoreo básico de modelos en entornos productivos.
+
+Colaborar con equipos multidisciplinarios (data, backend, MLOps) para construir soluciones escalables basadas en inteligencia artificial.
+
+Requisitos:
+
+Ingeniería en Sistemas, Computación, Matemáticas, Ciencia de Datos o afín (Título y Cédula Profesional).
+
+Inglés Intermedio-Avanzado (B2).
+
+Experiencia previa de 1 a 3 años en desarrollo de soluciones de Machine Learning o Inteligencia Artificial.
+
+Conocimiento en programación con Python.
+
+Experiencia con librerías y herramientas de ML como Scikit-learn, PyTorch o TensorFlow.
+
+Conocimientos en manipulación y análisis de datos (Pandas) y fundamentos de estadística aplicada.
+
+Experiencia en consumo de APIs de modelos de lenguaje (OpenAI, Azure OpenAI u otros).
+
+Conocimientos en prompt engineering, embeddings y búsqueda semántica.
+
+Experiencia o conocimiento en arquitecturas RAG.
+
+Experiencia en desarrollo de APIs con frameworks como FastAPI, Flask o Django.
+
+Conocimientos en uso de contenedores (Docker).
+
+Manejo de bases de datos relacionales (PostgreSQL, SQLite) y deseable conocimiento en bases vectoriales (ChromaDB, Pinecone o PGVector).
+
+Ofrecemos:
+
+Participación en Proyectos Emblemáticos a nivel nacional e internacional que te permitirán contribuir al desarrollo de la sociedad, de manera sostenible.
+
+Prestaciones Superiores a las de Ley y Programas de Bienestar.
+
+Cultura de trabajo Inclusiva y Colaborativa, donde se fomenta la Innovación y se reconoce el Talento y el Esfuerzo de cada miembro del equipo.
+
+Formación continua en Tecnologías y Metodologías de vanguardia.
+
+Si estás buscando un nuevo desafío profesional en una empresa líder en Ingeniería y Tecnología Avanzada, ¡queremos conocerte!, envía tu CV al correo de contacto.
+https://www.engineering-jobs.sener/jobs/8501474-ingeniero-de-machine-learning-ia

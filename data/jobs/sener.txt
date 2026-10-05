@@ -1,0 +1,47 @@
+https://www.linkedin.com/jobs/search-results/?currentJobId=4470056520&eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=H27VWBWjLmnuQSWQXXV2EA%3D%3D&trackingId=kPhf9t5HBGMrVoyZlZs8GQ%3D%3D&keywords=practicas%20ti%20&origin=SEMANTIC_SEARCH_LANDING_PAGE&geoId=90010045&distance=-0.621371
+Acerca del empleo
+Objetivo del puesto
+
+Buscamos un/a Becario/a de Desarrollo de Software con interés en desarrollarse en áreas de programación y tecnología, principalmente en el desarrollo Frontend y/o FullStack.
+
+La persona seleccionada participará en el desarrollo e implementación de interfaces y soluciones digitales, colaborando con el equipo técnico y adquiriendo experiencia práctica en un entorno profesional.
+
+Principales actividades
+
+Apoyar en el desarrollo y mantenimiento de aplicaciones web.
+Participar en el desarrollo Frontend y/o FullStack.
+Apoyar en la creación y maquetación de interfaces web.
+Implementar funcionalidades a partir de requerimientos definidos.
+Participar en la integración de interfaces con servicios y APIs.
+Realizar pruebas y validaciones de las funcionalidades desarrolladas.
+Apoyar en la identificación y solución de incidencias.
+Colaborar con el equipo de desarrollo en la mejora continua de las aplicaciones.
+
+Requisitos indispensables
+
+Ser estudiante activo/a de Ingeniería en Sistemas, Informática, Software, Mecatrónica o carreras afines.
+Contar con mínimo 1 año restante para concluir los estudios.
+Interés por desarrollarse profesionalmente en el área de programación y desarrollo de software.
+Conocimientos básicos de programación.
+Conocimientos de lógica de programación.
+Conocimientos básicos de desarrollo web.
+Disponibilidad para realizar prácticas profesionales/becariado durante el periodo establecido.
+
+Conocimientos deseables
+
+HTML, CSS y JavaScript.
+Conocimientos de algún framework Frontend, como Angular, React o Vue.
+Desarrollo de interfaces web y maquetación.
+Consumo de APIs.
+Conocimientos de desarrollo FullStack.
+Control de versiones con Git.
+Conocimientos básicos de metodologías ágiles.
+
+Competencias
+
+Pensamiento lógico y analítico.
+Capacidad de aprendizaje.
+Creatividad y atención al detalle.
+Trabajo en equipo.
+Proactividad.
+Interés por aprender nuevas tecnologías y herramientas.

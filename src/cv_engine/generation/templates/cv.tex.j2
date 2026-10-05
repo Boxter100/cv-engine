@@ -1,0 +1,178 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================== preámbulo
+% Plantilla derivada de las referencias resume-entry-level / resume-classic-ats
+% de la skill latex-document. Decisiones:
+%   - article pelado, una sola columna: el parseo de texto de un ATS
+%     (Workday, Greenhouse, Lever) falla con minipage, tabularx o TikZ.
+%   - El contacto va en \begin{center}, no en columnas: es el bloque que
+%     primero intenta extraer el ATS y el que más se pierde con layouts.
+%   - Sin \hfill para las fechas: se leen inline, en orden lineal.
+%   - letterpaper -> a4paper: las vacantes son de México.
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands,es-tabla]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{HTML}{29417A}
+\definecolor{muted}{HTML}{4A5568}
+\definecolor{rulecolor}{HTML}{B8C4D4}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0pt}{}
+  [\vspace{-0.6em}{\color{rulecolor}\rule{\linewidth}{0.5pt}}]
+\titlespacing*{\section}{0pt}{0.9em}{0.55em}
+
+\setlist[itemize]{
+  leftmargin=1.3em,
+  label={\textcolor{accent}{\textbullet}},
+  itemsep=0.1em,
+  topsep=0.25em,
+  parsep=0pt,
+  partopsep=0pt,
+}
+
+\newcommand{\sepdot}{\ \textcolor{rulecolor}{\textbar}\ }
+\newcommand{\soft}[1]{\textcolor{muted}{#1}}
+\newcommand{\strong}[1]{\textcolor{accent}\bfseries{#1}}
+\newcommand{\icon}[1]{\textcolor{muted}{#1}\ }
+% Encabezado de una entrada: puesto arriba, fecha alineada con \hfill.
+\newcommand{\cventry}[2]{\noindent\textbf{#1}\hfill\soft{#2}\par}
+
+\begin{document}
+
+% ------------------------------------------------------------------ cabecera
+\begin{center}
+  {\fontsize{20}{23}\selectfont\strong{ {{ cv.name|tex }}}}\par
+  \vspace{0.2em}
+  {\large {{ cv.title|tex }}}\par
+{%- if cv.target_position %}
+  \vspace{0.15em}
+  {\normalsize\soft{ {{ cv.target_position|tex }}{% if cv.target_company %}, {{ cv.target_company|tex }}{% endif %}}}\par
+{%- endif %}
+{%- set contact = [] %}
+{%- if cv.contact.location %}{% set _ = contact.append(('MapMarker', '', cv.contact.location|tex)) %}{% endif %}
+{%- if cv.contact.email %}{% set _ = contact.append(('Envelope', 'mailto:' ~ cv.contact.email|tex, cv.contact.email|tex)) %}{% endif %}
+{%- if cv.contact.phone %}{% set _ = contact.append(('Phone', '', cv.contact.phone|tex)) %}{% endif %}
+{%- if cv.contact.website %}{% set _ = contact.append(('Globe', cv.contact.website|tex, cv.contact.website|tex)) %}{% endif %}
+{%- if cv.contact.github %}{% set _ = contact.append(('Github', cv.contact.github|tex, cv.contact.github|tex)) %}{% endif %}
+{%- if cv.contact.linkedin %}{% set _ = contact.append(('Linkedin', cv.contact.linkedin|tex, cv.contact.linkedin|tex)) %}{% endif %}
+{%- if contact %}
+  \vspace{0.5em}
+  {\footnotesize
+{%- for icon, href, text in contact %}
+    \icon{\fa{{ icon }}}{% if href %}\href{ {{ href }}}{ {{- text }}}{% else %}{{ text }}{% endif %}{% if not loop.last %}\sepdot{% endif %}
+{%- endfor %}
+  \par}
+{%- endif %}
+\end{center}
+
+\vspace{0.2em}
+
+% ------------------------------------------------- secciones ordenadas por la IA
+% La IA elige el orden en `section_order`; la normalizacion garantiza que
+% todas las secciones con contenido esten presentes. Cada macro omite su
+% seccion si no hay nada que mostrar.
+{% macro section_perfil(cv) -%}
+{% if cv.summary %}
+\section*{PERFIL}
+\soft{ {{ cv.summary|tex }}}\par
+{% endif %}
+{%- endmacro %}
+
+{% macro section_experiencia(cv) -%}
+{% if cv.experiences %}
+\section*{EXPERIENCIA}
+{% for experience in cv.experiences %}
+\cventry{ {{ experience.role|tex }}{% if experience.company %}\sepdot {{ experience.company|tex }}{% endif %}}{ {{ experience.start_date|period }}{% if experience.end_date %} -- {{ experience.end_date|period }}{% endif %}}
+{% if experience.location %}
+{\small\soft{ {{ experience.location|tex }}}\par}
+{% endif %}
+{% if experience.bullets %}
+\begin{itemize}
+{% for bullet in experience.bullets %}
+  \item {{ bullet.text|tex }}
+{% endfor %}
+\end{itemize}
+{% endif %}
+{% if experience.technologies %}
+\vspace{-0.2em}
+{\footnotesize\soft{ {{ experience.technologies|join(', ')|tex }}}\par}
+{% endif %}
+\vspace{0.25em}
+{% endfor %}
+{% endif %}
+{%- endmacro %}
+
+{% macro section_proyectos(cv) -%}
+{% if cv.projects %}
+\section*{PROYECTOS}
+{% for project in cv.projects %}
+\noindent\textbf{ {{ project.name|tex }}}{% if project.type %}\ \sepdot\ {\small\soft{ {{ project.type|tex }}}}{% endif %}\par
+{% if project.url %}
+{\footnotesize\href{ {{ project.url|tex }}}{\soft{ {{ project.url|tex }}}}\par}
+{% endif %}
+{% if project.bullets %}
+\begin{itemize}
+{% for bullet in project.bullets %}
+  \item {{ bullet.text|tex }}
+{% endfor %}
+\end{itemize}
+{% endif %}
+{% if project.technologies %}
+\vspace{-0.2em}
+{\footnotesize\soft{ {{ project.technologies|join(', ')|tex }}}\par}
+{% endif %}
+\vspace{0.25em}
+{% endfor %}
+{% endif %}
+{%- endmacro %}
+
+{% macro section_habilidades(cv) -%}
+{% if cv.skill_groups %}
+\section*{HABILIDADES}
+{% for group in cv.skill_groups %}
+{\small\noindent\strong{ {{ group.category|tex }}}:\enspace {% for item in group.items %}{{ item|tex }}{% if not loop.last %}, {% endif %}{% endfor %}\par}
+\vspace{0.15em}
+{% endfor %}
+{% endif %}
+{%- endmacro %}
+
+{% macro section_educacion(cv) -%}
+{% if cv.education %}
+\section*{EDUCACIÓN}
+{% for item in cv.education %}
+\cventry{ {{ item.degree|tex }}}{ {{ item.start_date|date }}{% if item.end_date %} -- {{ item.end_date|date }}{% endif %}}
+{\small\soft{ {{ item.institution|tex }}}\par}
+{% if item.description %}
+{\small\soft{ {{ item.description|tex }}}\par}
+{% endif %}
+\vspace{0.25em}
+{% endfor %}
+{% endif %}
+{%- endmacro %}
+
+{% for name in cv.section_order|default(['perfil', 'experiencia', 'proyectos', 'habilidades', 'educacion'], true) %}
+{%- if name == 'perfil' %}{{ section_perfil(cv) }}
+{%- elif name == 'experiencia' %}{{ section_experiencia(cv) }}
+{%- elif name == 'proyectos' %}{{ section_proyectos(cv) }}
+{%- elif name == 'habilidades' %}{{ section_habilidades(cv) }}
+{%- elif name == 'educacion' %}{{ section_educacion(cv) }}
+{%- endif %}
+{% endfor %}
+
+\end{document}
